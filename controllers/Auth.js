@@ -108,7 +108,7 @@ router.get('/o/:provider/callback', function(req,res,next){
     res.redirect('/');
   }
 }, function(req,res){
-  res.redirect(req.session.returnTo || '/')
+  res.redirect(req.session.returnTo || '/github/repos')
 })
 
 module.exports = router

@@ -12,7 +12,8 @@ html(lang='en')
     link(rel='stylesheet', href='/site/css/style.css')
   body
     nav
-      a(href='https://github.com/uptownhr/hackathon-starter-lite', target='_blank') Github
+      if user
+        a(href='/github/repos') Repos
       a(href='/blog') Blog
       .btn-group
         if user
