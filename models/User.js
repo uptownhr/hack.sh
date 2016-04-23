@@ -24,6 +24,10 @@ var userSchema = new mongoose.Schema({
     picture: { type: String, default: '' }
   },
 
+  github: {
+    repos_synced: { type: Boolean, default: false }
+  },
+
   askEmail: {type: Boolean, default: true},
   created: {type: Date, default: Date.now},
   resetPasswordToken: String,

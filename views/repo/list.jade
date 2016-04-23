@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  if repos.length > 0
+    each repo in repos
+      article.post
+        header.post-header
+          h1.post-title
+            a(href="/repo/#{repo._id}")=repo.name
+          span.post-date=moment(repo.created).format('DD MMMM YYYY')
+          section.post-content!=repo.full_name
+          if repo.activated
+            a.btn.btn-danger(href="/github/repo/#{repo._id}/deactivate") De-activated
+          else
+            a.btn.btn-primary(href="/github/repo/#{repo._id}/activate") Activate
+          hr
+  else
+    article.post
+    header.post-header
+      h1.post-title No posts
+      p login to the #[a(href="/admin") admin] and make some articles
+
